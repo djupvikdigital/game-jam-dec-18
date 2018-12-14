@@ -1,0 +1,23 @@
+{
+  "name": "sneaky-snake",
+  "version": "1.0.0",
+  "description": "A sneaky Snake game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thirdhand/game-jam-dec-18.git"
+  },
+  "keywords": [
+    "snake",
+    "game"
+  ],
+  "author": "Reidar Djupvik <reidar@djupvik.digital>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thirdhand/game-jam-dec-18/issues"
+  },
+  "homepage": "https://github.com/thirdhand/game-jam-dec-18#readme"
+}
