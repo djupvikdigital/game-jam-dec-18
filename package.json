@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/thirdhand/game-jam-dec-18#readme",
   "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "babel-loader": "^8.0.4",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
