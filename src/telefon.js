@@ -36,7 +36,7 @@ var Entity = function(x,y,maxSpd,dir,jumpHeight,ImgPath,keyUp,keyDown,keyLeft,ke
 		jumping:false,
 		jumpHeight:jumpHeight,
 		image: new Image(),
-		jumpSound: new Audio('file:///home/kennet/Documents/Spil_projekter/game-jam-dec-18/src/audio/jump.mp3'),
+		jumpSound: new Audio('/static/audio/jump.mp3'),
 		draw: function() {
 			ctx.drawImage(self.image, self.x, self.y);
 		},
@@ -150,13 +150,13 @@ var Entity = function(x,y,maxSpd,dir,jumpHeight,ImgPath,keyUp,keyDown,keyLeft,ke
 	return self;
 }
 
-var map = Entity(0,0,0,0,0,'file:///home/kennet/Documents/Spil_projekter/game-jam-dec-18/src/img/Nokia');
+var map = Entity(0,0,0,0,0,'/static/img/Nokia');
 
-var player1 = Entity(50,50,2,1,15,'file:///home/kennet/Documents/Spil_projekter/game-jam-dec-18/src/img/Player',87,83,65,68,32);
+var player1 = Entity(50,50,2,1,15,'/static/img/Player',87,83,65,68,32);
 	
-var player2 = Entity(100,100,2,1,15,'file:///home/kennet/Documents/Spil_projekter/game-jam-dec-18/src/img/Player2',38,40,37,39,96);
+var player2 = Entity(100,100,2,1,15,'/static/img/Player2',38,40,37,39,96);
 
-var knapImgPath = 'file:///home/kennet/Documents/Spil_projekter/game-jam-dec-18/src/img/knap'
+var knapImgPath = '/static/img/knap'
 var knap1 = Knap(150,315,1,knapImgPath);
 var knap2 = Knap(225,315,2,knapImgPath);
 var knap3 = Knap(300,315,3,knapImgPath);
