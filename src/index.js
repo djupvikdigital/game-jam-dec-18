@@ -1,5 +1,5 @@
-alert('Hello world!');
+import { keyHandler, runGame } from './snake';
 
+window.addEventListener('keydown', keyHandler);
 
-
-hej
+runGame();
