@@ -1,5 +1,3 @@
-import { keyHandler, runGame } from './snake';
-
-window.addEventListener('keydown', keyHandler);
+import { runGame } from './snake';
 
 runGame();
