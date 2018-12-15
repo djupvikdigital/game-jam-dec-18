@@ -10,6 +10,8 @@ const keyCodes = {
   UP: 38
 };
 
+const legalDirections = ['', 'down', 'left', 'right', 'up'];
+
 let lastTime;
 
 const SIZE = 8;
@@ -76,6 +78,14 @@ export function keyHandler(event) {
       state.direction = 'up';
       break;
   }
+}
+
+export function setDirection(direction) {
+  if (!legalDirections.some(direction)) {
+    console.error('Illegal direction: ' + direction);
+    return;
+  }
+  state.direction = direction;
 }
 
 function update(dt) {
