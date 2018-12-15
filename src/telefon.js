@@ -1,8 +1,9 @@
+import{setDirection} from "./snake"
+
 const canvas = document.getElementById('ctx');
 const ctx = canvas.getContext('2d');
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
-
 	
 var Knap = function(x,y,nr,imgPath){
 	var self = {
@@ -208,6 +209,11 @@ function checkKnapCol2(player,knap){
 		
 			knap.aktiv = 1;
 			knap.image.src = knapImgPath + knap.nr + knap.aktiv + ".png";	
+		
+			if(knap === knap2) setDirection('up');
+			if(knap === knap8) setDirection('down');
+			if(knap === knap4) setDirection('left');
+			if(knap === knap6) setDirection('right');
 		
 			if(knap != knap1){
 				knap1.aktiv = 0;

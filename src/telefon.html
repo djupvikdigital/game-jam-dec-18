@@ -16,6 +16,27 @@ const ctx = canvas.getContext('2d');
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
 
+var MovingThing = function(x,y,imgPath){
+	var self = {
+		x:x,
+		y:y,
+		orgX:x,
+		orgY:y,
+		targetX:0,
+		targetY:0,
+		allowedDiff:
+		image: new Image(),
+		draw: function() {
+			ctx.drawImage(self.image, self.x, self.y);
+		},
+		
+	}
+	
+	self.image.src = imgPath;
+	
+	return self;
+}
+	
 	
 var Knap = function(x,y,nr,imgPath){
 	var self = {
