@@ -81,7 +81,7 @@ export function keyHandler(event) {
 }
 
 export function setDirection(direction) {
-  if (!legalDirections.some(direction)) {
+  if (!legalDirections.some(item => item === direction)) {
     console.error('Illegal direction: ' + direction);
     return;
   }
