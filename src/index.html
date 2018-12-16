@@ -4,19 +4,108 @@
     <meta charset="utf-8" />
     <title>Sneaky Snake</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      #ctx {
+        border: 1px solid #000000;
+      }
+      #game-canvas {
+        border: 1px solid black;
+        position: absolute;
+        left: 174px;
+        top: 138px;
+      }
+      .menu-button {
+        background-color: transparent;
+        border: 0;
+        position: absolute;
+        height: 50px;
+        width: 100px;
+      }
+      #play {
+        left: 66px;
+        top: 154px;
+      }
+      #how-to {
+        left: 66px;
+        top: 217px;
+      }
+      #credits {
+        left: 66px;
+        top: 282px;
+      }
+      .difficulty {
+        position: absolute;
+        height: 25px;
+        width: 25px;
+      }
+      .difficulty input {
+        opacity: 0;
+      }
+      .difficulty-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+      input:checked + .difficulty-bg {
+        background-image: url(/static/img/Kryds.png);
+      }
+      #difficulty-1 {
+        left: 229px;
+        top: 247px;
+      }
+      #difficulty-2 {
+        left: 229px;
+        top: 292px;
+      }
+      #difficulty-3 {
+        left: 357px;
+        top: 247px;
+      }
+      #difficulty-4 {
+        left: 357px;
+        top: 292px;
+      }
+      #screen1 {
+        background-image: url(/static/img/StartMenu.png);
+        height: 500px;
+        width: 500px;
+      }
+    </style>
   </head>
   <body>
-    <canvas
-      id="ctx"
-      width="500"
-      height="500"
-      style="border:1px solid #000000;"
-    ></canvas>
-    <canvas
-      id="game-canvas"
-      width="168"
-      height="96"
-      style="border: 1px solid black; position: absolute; left: 174px; top: 138px;"
-    ></canvas>
+    <div id="screens">
+      <div id="screen1">
+        <button
+          class="menu-button"
+          id="play"
+          onclick="showScreen(2)"
+          title="Play"
+        ></button>
+        <button class="menu-button" id="how-to" title="How to"></button>
+        <button class="menu-button" id="credits" title="Credits"></button>
+        <label class="difficulty" id="difficulty-1">
+          <input type="radio" name="difficulty" value="1" checked />
+          <div class="difficulty-bg"></div>
+        </label>
+        <label class="difficulty" id="difficulty-2">
+          <input type="radio" name="difficulty" value="2" />
+          <div class="difficulty-bg"></div>
+        </label>
+        <label class="difficulty" id="difficulty-3">
+          <input type="radio" name="difficulty" value="3" />
+          <div class="difficulty-bg"></div>
+        </label>
+        <label class="difficulty" id="difficulty-4">
+          <input type="radio" name="difficulty" value="6" />
+          <div class="difficulty-bg"></div>
+        </label>
+      </div>
+      <div id="screen2" hidden>
+        <canvas id="ctx" width="500" height="500"></canvas>
+        <canvas id="game-canvas" width="168" height="96"></canvas>
+      </div>
+    </div>
   </body>
 </html>
