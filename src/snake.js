@@ -142,13 +142,16 @@ function update(difficulty, dt) {
   }
 }
 
-export function runGame(difficulty = 4) {
-  const now = Date.now();
-  const dt = (now - lastTime) / 1000.0;
-  context.clearRect(0, 0, WIDTH, HEIGHT);
-  update(difficulty, dt);
-  drawFood(state.food);
-  drawPlayer();
-  lastTime = now;
-  requestAnimationFrame(runGame);
+export function runGame(difficulty) {
+  function loop() {
+    const now = Date.now();
+    const dt = (now - lastTime) / 1000.0;
+    context.clearRect(0, 0, WIDTH, HEIGHT);
+    update(difficulty, dt);
+    drawFood(state.food);
+    drawPlayer();
+    lastTime = now;
+    requestAnimationFrame(loop);
+  }
+  loop();
 }
