@@ -88,11 +88,11 @@ export function setDirection(direction) {
   state.direction = direction;
 }
 
-function update(dt) {
+function update(difficulty, dt) {
   const height = HEIGHT / SIZE;
   const width = WIDTH / SIZE;
   let { x, y } = state;
-  const speed = SIZE * 6;
+  const speed = SIZE * difficulty;
   const movement = speed * dt;
   if (!state.direction) {
     return;
@@ -142,11 +142,11 @@ function update(dt) {
   }
 }
 
-export function runGame() {
+export function runGame(difficulty = 4) {
   const now = Date.now();
   const dt = (now - lastTime) / 1000.0;
   context.clearRect(0, 0, WIDTH, HEIGHT);
-  update(dt);
+  update(difficulty, dt);
   drawFood(state.food);
   drawPlayer();
   lastTime = now;
