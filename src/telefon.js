@@ -5,6 +5,13 @@ const ctx = canvas.getContext('2d');
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
 	
+var music = new Audio('static/audio/Nokia_Groovy_Blues.mp3')
+
+music.volume = 0.75;
+music.loop = true; 
+music.play();
+
+
 var Knap = function(x,y,nr,imgPath){
 	var self = {
 		x:x,
@@ -155,7 +162,7 @@ var map = Entity(0,0,0,0,0,'/static/img/Nokia');
 
 var player1 = Entity(50,50,2,1,15,'/static/img/Player',87,83,65,68,32);
 	
-var player2 = Entity(100,100,2,1,15,'/static/img/Player2',38,40,37,39,96);
+var player2 = Entity(100,100,2,1,15,'/static/img/Player2',38,40,37,39,16);
 
 var knapImgPath = '/static/img/knap'
 var knap1 = Knap(150,315,1,knapImgPath);
